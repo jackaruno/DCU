@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+    <li>
+        {% for n in nums %}
+            {% if n|divisibleby:"3" %}
+                {% if n|divisibleby:"5" %}
+                    <li>FizzBuzz</li>
+                {% else %}
+                    <li>Fizz</li>
+                {% endif %}
+            {% elif n|divisibleby:"5" %}
+                <li>Buzz</li>
+            {% else %}
+                <li>{{n}}</li>
+            {% endif %}
+        {% endfor %}
+    </li>
+{% endblock %}
